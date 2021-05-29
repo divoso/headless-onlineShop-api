@@ -11,11 +11,11 @@ class CreatePayingMethodsTable extends Migration
     {
         Schema::create('paying_methods', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
+		$table->unsignedInteger('id')->unsigned();
 		$table->string('name');
-		$table->integer('status',11)->default('0');
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->integer('status')->default(0);
+				$table->timestamps();
+
 
         });
     }

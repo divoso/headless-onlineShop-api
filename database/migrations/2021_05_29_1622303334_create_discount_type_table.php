@@ -11,10 +11,10 @@ class CreateDiscountTypeTable extends Migration
     {
         Schema::create('discount_type', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
+		$table->unsignedInteger('id')->unsigned();
 		$table->string('title',128);
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+				$table->timestamps();
+
 
         });
     }

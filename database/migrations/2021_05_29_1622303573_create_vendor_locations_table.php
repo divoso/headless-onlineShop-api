@@ -10,12 +10,12 @@ class CreateVendorLocationsTable extends Migration
     {
         Schema::create('vendor_locations', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
-		$table->integer('vendor_id',10)->unsigned();
+		$table->unsignedInteger('id')->unsigned();
+		$table->integer('vendor_id')->unsigned();
 		;
 		;
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+				$table->timestamps();
+
 
         });
     }

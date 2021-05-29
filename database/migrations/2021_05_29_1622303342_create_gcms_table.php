@@ -11,15 +11,15 @@ class CreateGcmsTable extends Migration
     {
         Schema::create('gcms', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
-		$table->integer('customer_id',10)->unsigned()->nullable()->default('NULL');
-		$table->integer('operator_id',10)->unsigned()->nullable()->default('NULL');
-		$table->integer('transporter_id',10)->unsigned()->nullable()->default('NULL');
-		$table->integer('vendor_id',10)->unsigned()->nullable()->default('NULL');
-		$table->integer('dev_type',11)->nullable()->default('NULL');
-		$table->string('gcm_id')->nullable()->default('NULL');
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->unsignedInteger('id')->unsigned();
+		$table->integer('customer_id')->unsigned()->nullable()->nullable();
+		$table->integer('operator_id')->unsigned()->nullable()->nullable();
+		$table->integer('transporter_id')->unsigned()->nullable()->nullable();
+		$table->integer('vendor_id')->unsigned()->nullable()->nullable();
+		$table->integer('dev_type')->nullable()->nullable();
+		$table->string('gcm_id')->nullable()->nullable();
+				$table->timestamps();
+
 
         });
     }

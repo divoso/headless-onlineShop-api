@@ -11,21 +11,21 @@ class CreateCustomerAddressesTable extends Migration
     {
         Schema::create('customer_addresses', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
-		$table->string('region')->nullable()->default('NULL');
+		$table->unsignedInteger('id')->unsigned();
+		$table->string('region')->nullable()->nullable();
 		$table->string('full_address');
-		$table->string('opt_number')->nullable()->default('NULL');
-		$table->string('phone_number')->nullable()->default('NULL');
-		$table->string('name')->nullable()->default('NULL');
-		$table->string('door')->nullable()->default('NULL');
-		$table->string('floor')->nullable()->default('NULL');
+		$table->string('opt_number')->nullable()->nullable();
+		$table->string('phone_number')->nullable()->nullable();
+		$table->string('name')->nullable()->nullable();
+		$table->string('door')->nullable()->nullable();
+		$table->string('floor')->nullable()->nullable();
 		;
 		;
 		$table->string('title');
-		$table->integer('customer_id',10)->unsigned();
-		$table->integer('is_deleted',11)->default('0');
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->integer('customer_id')->unsigned();
+		$table->integer('is_deleted')->default(0);
+				$table->timestamps();
+
 
         });
     }

@@ -11,13 +11,13 @@ class CreateCustomerFavoritesTable extends Migration
     {
         Schema::create('customer_favorites', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
-		$table->integer('vendor_product_id',10)->unsigned();
-		$table->integer('product_id',10)->unsigned();
-		$table->integer('customer_id',10)->unsigned();
-		$table->integer('added_by_system',11)->default('2');
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->unsignedInteger('id')->unsigned();
+		$table->integer('vendor_product_id')->unsigned();
+		$table->integer('product_id')->unsigned();
+		$table->integer('customer_id')->unsigned();
+		$table->integer('added_by_system')->default('2');
+				$table->timestamps();
+
 
         });
     }

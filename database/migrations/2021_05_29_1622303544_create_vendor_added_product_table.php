@@ -10,12 +10,12 @@ class CreateVendorAddedProductTable extends Migration
     {
         Schema::create('vendor_added_product', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
-		$table->integer('product_id',10)->unsigned();
-		$table->integer('vendor_id',10)->unsigned();
-		$table->integer('is_seen',11)->default('0');
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->unsignedInteger('id')->unsigned();
+		$table->integer('product_id')->unsigned();
+		$table->integer('vendor_id')->unsigned();
+		$table->integer('is_seen')->default(0);
+				$table->timestamps();
+
 
         });
     }

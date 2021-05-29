@@ -11,17 +11,17 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
-		$table->integer('product_id',10)->unsigned();
-		$table->integer('price',11);
-		$table->integer('off_price',11)->nullable()->default('NULL');
-		$table->integer('stock',11)->default('0');
-		$table->integer('status',11)->default('0');
-		$table->integer('sort',11)->default('1');
-		$table->integer('view',11)->default('0');
-		$table->integer('vendor_id',10)->unsigned();
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->unsignedInteger('id')->unsigned();
+		$table->integer('product_id')->unsigned();
+		$table->integer('price');
+		$table->integer('off_price')->nullable()->nullable();
+		$table->integer('stock')->default(0);
+		$table->integer('status')->default(0);
+		$table->integer('sort')->default('1');
+		$table->integer('view')->default(0);
+		$table->integer('vendor_id')->unsigned();
+				$table->timestamps();
+
 
         });
     }

@@ -10,11 +10,11 @@ class CreateSectionProductsTable extends Migration
     {
         Schema::create('section_products', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
-		$table->integer('section_id',10)->unsigned();
-		$table->integer('vendor_product_id',10)->unsigned();
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->unsignedInteger('id')->unsigned();
+		$table->integer('section_id')->unsigned();
+		$table->integer('vendor_product_id')->unsigned();
+				$table->timestamps();
+
 
         });
     }

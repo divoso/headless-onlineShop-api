@@ -11,23 +11,23 @@ class CreateDiscountsTable extends Migration
     {
         Schema::create('discounts', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
+		$table->unsignedInteger('id')->unsigned();
 		$table->string('title');
-		$table->integer('type_id',10)->unsigned();
+		$table->integer('type_id')->unsigned();
 		$table->string('code');
-		$table->integer('amount_type',11)->default('1');
-		$table->integer('amount',11);
-		$table->integer('max_amount',11)->nullable()->default('NULL');
-		$table->string('text')->nullable()->default('NULL');
-		$table->integer('customer_id',10)->unsigned()->nullable()->default('NULL');
-		$table->integer('category_id',10)->unsigned()->nullable()->default('NULL');
-		$table->integer('vendor_product_id',10)->unsigned()->nullable()->default('NULL');
-		$table->timestamp('start_date')->default('CURRENT_TIMESTAMP');
-		$table->integer('vendor_id',10)->unsigned()->nullable()->default('NULL');
-		$table->timestamp('stop_date')->default('CURRENT_TIMESTAMP');
-		$table->integer('status',11)->default('0');
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->integer('amount_type')->default('1');
+		$table->integer('amount');
+		$table->integer('max_amount')->nullable()->nullable();
+		$table->string('text')->nullable()->nullable();
+		$table->integer('customer_id')->unsigned()->nullable()->nullable();
+		$table->integer('category_id')->unsigned()->nullable()->nullable();
+		$table->integer('vendor_product_id')->unsigned()->nullable()->nullable();
+		$table->timestamp('start_date')->nullable();
+		$table->integer('vendor_id')->unsigned()->nullable()->nullable();
+		$table->timestamp('stop_date')->nullable();
+		$table->integer('status')->default(0);
+				$table->timestamps();
+
 
         });
     }

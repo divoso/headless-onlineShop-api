@@ -11,10 +11,10 @@ class CreateReturnStatusTable extends Migration
     {
         Schema::create('return_status', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
+		$table->unsignedInteger('id')->unsigned();
 		$table->string('name');
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+				$table->timestamps();
+
 
         });
     }

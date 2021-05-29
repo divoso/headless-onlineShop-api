@@ -11,11 +11,9 @@ class CreateCommissionsTable extends Migration
     {
         Schema::create('commissions', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
+		$table->unsignedInteger('id')->unsigned();
 		$table->string('name');
-		;
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+            $table->timestamps();
 
         });
     }

@@ -10,13 +10,13 @@ class CreateVendorShippingPricesTable extends Migration
     {
         Schema::create('vendor_shipping_prices', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
+		$table->unsignedInteger('id')->unsigned();
 		$table->string('name');
-		$table->integer('price',11);
-		$table->integer('vendor_id',10)->unsigned();
-		$table->integer('destination',11)->nullable()->default('NULL');
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->integer('price');
+		$table->integer('vendor_id')->unsigned();
+		$table->integer('destination')->nullable()->nullable();
+				$table->timestamps();
+
 
         });
     }

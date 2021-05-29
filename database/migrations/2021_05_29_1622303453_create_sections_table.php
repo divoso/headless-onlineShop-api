@@ -11,15 +11,15 @@ class CreateSectionsTable extends Migration
     {
         Schema::create('sections', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
+		$table->unsignedInteger('id')->unsigned();
 		$table->string('name');
-		$table->integer('type',11)->default('0');
+		$table->integer('type')->default(0);
 		$table->string('image');
-		$table->integer('vendor_id',10)->unsigned()->nullable()->default('NULL');
+		$table->integer('vendor_id')->unsigned()->nullable()->nullable();
 		$table->string('bg_color');
-		$table->integer('status',11)->default('0');
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->integer('status')->default(0);
+				$table->timestamps();
+
 
         });
     }

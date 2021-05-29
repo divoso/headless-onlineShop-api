@@ -10,15 +10,15 @@ class CreateVendorBannersTable extends Migration
     {
         Schema::create('vendor_banners', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
-		$table->string('image')->nullable()->default('NULL');
-		$table->integer('type',11)->default('1');
-		$table->integer('section_id',10)->unsigned()->nullable()->default('NULL');
-		$table->integer('is_web',11)->default('1');
-		$table->integer('status',1)->default('0');
-		$table->integer('vendor_id',10)->unsigned();
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->unsignedInteger('id')->unsigned();
+		$table->string('image')->nullable()->nullable();
+		$table->integer('type')->default('1');
+		$table->integer('section_id')->unsigned()->nullable()->nullable();
+		$table->integer('is_web')->default('1');
+		$table->integer('status')->default(0);
+		$table->integer('vendor_id')->unsigned();
+				$table->timestamps();
+
 
         });
     }

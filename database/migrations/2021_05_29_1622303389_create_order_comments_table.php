@@ -11,14 +11,14 @@ class CreateOrderCommentsTable extends Migration
     {
         Schema::create('order_comments', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
-		$table->integer('order_id',10)->unsigned();
-		$table->integer('vendor_id',10)->unsigned();
-		$table->integer('customer_id',10)->unsigned();
-		$table->integer('rate',11)->default('0');
-		$table->string('text')->nullable()->default('NULL');
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->unsignedInteger('id')->unsigned();
+		$table->integer('order_id')->unsigned();
+		$table->integer('vendor_id')->unsigned();
+		$table->integer('customer_id')->unsigned();
+		$table->integer('rate')->default(0);
+		$table->string('text')->nullable()->nullable();
+				$table->timestamps();
+
 
         });
     }

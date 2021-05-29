@@ -10,12 +10,12 @@ class CreateVendorCheckOutsTable extends Migration
     {
         Schema::create('vendor_check_outs', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
-		$table->integer('amount',11);
-		$table->integer('final_amount',11);
+		$table->unsignedInteger('id')->unsigned();
+		$table->integer('amount');
+		$table->integer('final_amount');
 		$table->string('commission');
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+				$table->timestamps();
+
 
         });
     }

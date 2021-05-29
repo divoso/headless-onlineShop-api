@@ -11,15 +11,14 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
+		$table->unsignedInteger('id')->unsigned();
 		$table->string('name');
-		$table->integer('parent_id',10)->unsigned()->nullable()->default('NULL');
-		$table->string('slug')->nullable()->default('NULL');
-		$table->string('image')->nullable()->default('NULL');
-		$table->integer('status',11)->default('0');
-		$table->integer('type',11)->nullable()->default('NULL');
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->integer('parent_id')->unsigned()->nullable()->nullable();
+		$table->string('slug')->nullable()->nullable();
+		$table->string('image')->nullable()->nullable();
+		$table->integer('status')->default(0);
+		$table->integer('type')->nullable();
+            $table->timestamps();
 
         });
     }

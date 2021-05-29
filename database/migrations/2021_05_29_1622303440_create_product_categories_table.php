@@ -11,11 +11,11 @@ class CreateProductCategoriesTable extends Migration
     {
         Schema::create('product_categories', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
-		$table->integer('product_id',10)->unsigned();
-		$table->integer('category_id',10)->unsigned();
-		$table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->unsignedInteger('id')->unsigned();
+		$table->integer('product_id')->unsigned();
+		$table->integer('category_id')->unsigned();
+				$table->timestamps();
+
 
         });
     }

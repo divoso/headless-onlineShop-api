@@ -10,13 +10,12 @@ class CreateAdminsTable extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
 
-		$table->integer('id',10)->unsigned();
+		$table->unsignedInteger('id')->unsigned();
 		$table->string('name');
 		$table->string('email');
 		$table->string('password');
-		$table->string('remember_token',100)->nullable()->default('NULL');
-		$table->timestamp('created_at')->nullable()->default('CURRENT_TIMESTAMP');
-		$table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+		$table->string('remember_token',100)->nullable()->nullable();
+		$table->timestamps();
 
         });
     }
